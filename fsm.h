@@ -1,11 +1,11 @@
-#ifndef FSM_H_
-#define FSM_H_
+#ifndef FSM_H_INCLUDED
+#define FSM_H_INCLUDED
 
 /**
   * These are te input/output types, you can
   * replace them with any type you want.
   */
-typedef char fsm_input_t;
+typedef void* fsm_input_t;
 typedef void* fsm_output_t;
 
 #define FSM_INPUT_DEFAULT_VALUE '\0'
@@ -30,7 +30,7 @@ typedef void* fsm_output_t;
  * - int previous_state;
  * - how many times the input has been read;
  */
-typedef fsm_output_t (*state_callable)(fsm_input_t, fsm_output_t, int, int);
+typedef fsm_output_t (*fsm_state_callable_t)(fsm_input_t, fsm_output_t, int, int);
 
 /**
   * State Multiplexer Type
@@ -46,6 +46,6 @@ typedef int (*mux_callable)(fsm_input_t, int);
  * - Array of the multiplexers;
  * - Maximum states.
  */
-int fsm(int def, fsm_input_t (*input)(int), state_callable *S, mux_callable *M, int DIM);
+int fsm(int def, fsm_input_t (*input)(int), fsm_state_callable_t *S, mux_callable *M, int DIM);
 
-#endif // FSM_H_
+#endif // FSM_H_INCLUDED

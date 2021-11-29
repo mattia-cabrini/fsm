@@ -23,7 +23,7 @@ fsm_output_t s2(fsm_input_t in, fsm_output_t out, int ps, int r) {
 int mux0(fsm_input_t in, int ps) {
   printf("MUX 0, PS: %d\n", ps);
 
-  switch(in) {
+  switch(*(char*)in) {
     case '0':
       return 1;
     case '1':
@@ -36,7 +36,7 @@ int mux0(fsm_input_t in, int ps) {
 int mux1(fsm_input_t in, int ps) {
   printf("MUX 1, PS: %d\n", ps);
 
-  switch(in) {
+  switch(*(char*)in) {
     case '0':
       return 2;
     case '1':
@@ -49,7 +49,7 @@ int mux1(fsm_input_t in, int ps) {
 int mux2(fsm_input_t in, int ps) {
   printf("MUX 2, PS: %d\n", ps);
 
-  switch(in) {
+  switch(*(char*)in) {
     case '0':
       return 2;
     case '1':
@@ -60,7 +60,7 @@ int mux2(fsm_input_t in, int ps) {
 }
 
 fsm_input_t input(int i) {
-  return str[i];
+  return &str[i];
 }
 
 void test_01_sr();
@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
 }
 
 void test_01_sr() {
-  state_callable S[3];
+  fsm_state_callable_t S[3];
   mux_callable M[3];
 
   S[0] = s0;

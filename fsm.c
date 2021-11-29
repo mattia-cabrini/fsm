@@ -1,7 +1,7 @@
 #include "fsm.h"
 #include <stdlib.h>
 
-int fsm(int def, fsm_input_t (*input)(int), state_callable *S, mux_callable *M, int DIM) {
+int fsm(int def, fsm_input_t (*input)(int), fsm_state_callable_t *S, mux_callable *M, int DIM) {
   int s = def;
   int p = -1;
   int i;
