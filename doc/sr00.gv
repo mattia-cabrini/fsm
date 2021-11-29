@@ -8,4 +8,5 @@ digraph {
     B->C[label="input: 0"]
     B->A[label="input: 1"]
     C->A[label="input: 1"]
+    C->C[label="input: 0"]
 }
