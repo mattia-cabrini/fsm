@@ -17,9 +17,11 @@ I'm not going to furnish you a guide on how to design your FSM. If you are here,
 ** Example of FSM and what the library allows you to do
 To present the main features of this library, let's take a look at the following example:
 
+#+BEGIN_CENTER
 #+CAPTION: The FSM graph to recognize the sequence "00"
 #+NAME: sr00
 [[./doc/sr00.svg]]
+#+END_CENTER
 
 The code will be required to provide the following representations.
 
