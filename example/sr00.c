@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "fsm.h"
+#include "../fsm.h"
 
 char* str = NULL;
 
@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
 
 void test_01_sr() {
   fsm_state_callable_t S[3];
-  mux_callable M[3];
+  fsm_mux_callable_t M[3];
 
   S[0] = s0;
   S[1] = s1;

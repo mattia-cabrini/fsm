@@ -37,7 +37,7 @@ typedef fsm_output_t (*fsm_state_callable_t)(fsm_input_t, fsm_output_t, int, int
   * - fsm_input_t input;
   * - int previous_state;
   */
-typedef int (*mux_callable)(fsm_input_t, int);
+typedef int (*fsm_mux_callable_t)(fsm_input_t, int);
 
 /**
  * Finite State Machine
@@ -46,6 +46,6 @@ typedef int (*mux_callable)(fsm_input_t, int);
  * - Array of the multiplexers;
  * - Maximum states.
  */
-int fsm(int def, fsm_input_t (*input)(int), fsm_state_callable_t *S, mux_callable *M, int DIM);
+int fsm(int def, fsm_input_t (*input)(int), fsm_state_callable_t *S, fsm_mux_callable_t *M, int DIM);
 
 #endif // FSM_H_INCLUDED

@@ -61,7 +61,7 @@ The function could return an output. The output of a state function is passed to
 
 An example:
 #+BEGIN_SRC c
-fsm_output_t s2(fsm_input_t in, fsm_output out, int ps, int r) {
+fsm_output_t s2(fsm_input_t in, fsm_output_t out, int ps, int r) {
   printf("Sequence found! Index: ", r - 2);
 }
 #+END_SRC
